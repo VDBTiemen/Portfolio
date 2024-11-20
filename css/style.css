@@ -1,0 +1,90 @@
+/* css/styles.css */
+:root {
+  --bs-light: #fbfef9;
+  --bs-secondary: #e1b97a;
+  --bs-dark: #071e22;
+  --bs-warning: #ff1f1f;
+}
+
+.btn-warning {
+  color: var(--bs-light);
+  background-color: var(--bs-warning) !important;
+  border-color: var(--bs-warning) !important;
+}
+
+.btn-warning:hover {
+  color: var(--bs-light);
+  background-color: #a81515 !important;
+  border-color: #a81515 !important;
+}
+
+.text-primary {
+  color: var(--bs-dark) !important;
+}
+
+.text-secondary {
+  color: var(--bs-secondary) !important;
+}
+
+#active {
+  color: var(--bs-secondary);
+}
+
+body {
+  background-color: var(--bs-light);
+}
+
+h1,
+h2,
+h3,
+h4,
+nav {
+  color: var(--titel-color);
+}
+
+nav {
+  background-color: var(--bs-light);
+  z-index: 3;
+}
+
+.navbar-brand {
+  position: absolute;
+}
+
+.header-section {
+  height: 150vh;
+  background-image: url("/img/Tiemen_cropped.jpg");
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+footer a,
+td a {
+  text-decoration: none;
+  color: var(--bs-warning);
+}
+
+footer a:hover,
+td a:hover {
+  color: #a81515;
+  text-decoration: underline;
+}

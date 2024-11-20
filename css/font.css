@@ -1,0 +1,15 @@
+body {
+  font-family: "Newsreader", serif;
+  font-weight: 600;
+  font-size: large;
+}
+
+h1,
+h2,
+h3,
+h4,
+nav {
+  font-family: "Charm", cursive;
+  font-weight: 700;
+  font-size: xx-large;
+}
