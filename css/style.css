@@ -53,7 +53,7 @@ nav {
 
 .header-section {
   height: 150vh;
-  background-image: url("/img/Tiemen_cropped.jpg");
+  background-image: url("/assets/img/Tiemen_cropped.jpg");
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -75,7 +75,10 @@ nav {
   z-index: 2;
 }
 
-
+#map {
+  width: 500px;
+  height: 500px;
+}
 
 footer a,
 td a {
