@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="nl-BE">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webshop Project Tiemen</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/font.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="scripts/script.js"></script>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md sticky-top">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item  d-flex justify-content-center">
+              <a class="nav-link" href="/index.html">Home</a>
+            </li>
+            <li class="nav-item d-flex justify-content-center">
+              <a class="nav-link" href="portfolio.html">Projecten</a>
+            </li> 
+            <li class="nav-item d-flex justify-content-center">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+        </div>
+      </div>
+    </nav>
+    <header class="header mt-5">
+      <h1 class="text-center display-1">Arduino</h1>
+    </header>
+    <main class="container-fluid my-5 py-5">
+      <article class="row my-5">
+        <section class="col-lg-6 col-md-12 px-5">
+          <p>
+            Voor mijn project heb ik een wiskundig spel ontwikkeld op een Arduino met een expansion board. 
+            Dit project combineerde hardware-interacties en programmeerlogica, 
+            waarbij ik gebruik heb gemaakt van C-programmering om een interactieve ervaring te creëren. 
+            Het spel is ontworpen om spelers eenvoudige rekensommen te laten oplossen, terwijl ze uitdagingen zoals een tijdslimiet en beperkte levens tegenkomen.
+          </p>
+          <p>
+            1. Bibliotheken en Configuraties
+            De code maakt gebruik van meerdere bibliotheken (display.h, button.h, usart.h, etc.) om hardwarecomponenten zoals een display, knoppen, buzzer, en leds aan te sturen.
+          </p>
+                #define wordt gebruikt voor het instellen van constante waarden zoals notenfrequenties (voor de buzzer) en de knoppenpinnen.
+          <p> 2. Timer Initialisatie
+            
+              De functie initTimer() configureert de timer in Fast PWM Mode met een prescaler van 1024. Dit zorgt voor nauwkeurige timing, essentieel voor de LED- en buzzerinteracties.
+              Interrupts zijn ingesteld om specifieke acties uit te voeren, zoals het verminderen van levens wanneer een speler een fout maakt.</p>
+           
+          <p>
+            3. Hoofdstructuur van het Spel
+            
+                Een struct RAPPORT is gedefinieerd om data van de oefeningen bij te houden, zoals de termen, bewerking, het antwoord van de speler, en het juiste antwoord.
+                Dynamische geheugentoewijzing (malloc) wordt gebruikt om arrays aan te maken voor deze gegevens.
+          </p>
+          <p>
+            4. Spelmodi en Logica
+            
+                De functies menuLoop() en diffLoop() hanteren respectievelijk de navigatie door het menu en het kiezen van de moeilijkheidsgraad met een potentiometer.
+                De functie startExec() genereert rekensommen afhankelijk van de moeilijkheidsgraad en modus.
+                    Getallen worden willekeurig gegenereerd met rand().
+                    Correcte antwoorden worden berekend en vergeleken met de input van de speler.
+          </p>
+          <p>
+            5. Gebruikersfeedback
+            
+                LEDs worden gebruikt om de levens van de speler visueel weer te geven, waarbij telkens één LED wordt uitgeschakeld na een fout antwoord.
+                De functie checkAnswer() controleert of een antwoord correct is en past de punten of levens dienovereenkomstig aan.
+                De buzzer speelt tonen af tijdens specifieke gebeurtenissen, zoals het starten van een nieuwe serie oefeningen.
+              </p>
+              <p>
+            6. Interrupts
+            
+                Timer Interrupts: Gebruikt om LED-status te wijzigen en het spel opnieuw op te starten na game-over.
+                Pin Change Interrupts: Hanteren input van de knoppen voor navigatie en invoer.
+              </p>
+              <p>
+            7. Geheugenbeheer
+            Na het voltooien van het spel wordt dynamisch toegewezen geheugen vrijgegeven met free(), om geheugenlekken te voorkomen.
+          </p>
+          
+        </section>
+        <section class="col-lg-6 col-md-12 px-5">
+          <figure>
+            <img src="assets/img/arduino_code.png" width="1000px" alt="" />
+            <figcaption><p>C code voor de arduino timer en eind score</p></figcaption>
+          </figure>
+        </section>
+      </article>
+    </main>
+
+    <section class="container col-12 mt-5">
+      <hr class="text-secondary" />
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Dingen die ik tijdens dit project heb geleerd</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Arduino</th>
+            <td>
+              De interactie tussen software en hardware te beheren, zoals het aansturen van leds, knoppen, en een buzzer.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Arduino timers</th>
+            <td>
+              Efficiënt gebruik te maken van timers en interrupts voor real-time responsiviteit.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">Stack en Heap</th>
+            <td>
+              Dynamisch geheugenbeheer in C te implementeren en optimaliseren.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">C</th>
+            <td>
+              Complexe programmeerstructuren zoals structs te gebruiken voor databeheer.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <footer class="footer text-center">
+      <hr class="text-secondary" />
+      <a class="mx-2" href="https://www.instagram.com/tiemendiebergh/"
+        ><img src="assets/img/instagram.png" alt="instagram" width="20px"
+      /></a>
+      <a class="mx-2" href="https://github.com/VDBTiemen"
+        ><img src="assets/img/github.png" alt="github" width="20px"
+      /></a>
+      <a class="mx-2" href="mailto:tiemenvandenbergh@gmail.com"
+        ><img src="assets/img/mail_positive.png" alt="mail" width="20px"
+      /></a>
+      <a href="contact.html"><p class="mt-3">Contact</p></a>
+      <span id="jaar"></span>
+    </footer>
+  </body>
+</html>
