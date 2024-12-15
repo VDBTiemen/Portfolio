@@ -11,5 +11,4 @@ function init() {
   }).addTo(map);
 
   let Marker = L.marker([51.213487098383204, 4.25898036090494]).addTo(map);
-  Marker.bindPopup("<b>Beveren</b>").openPopup();
 }

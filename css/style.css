@@ -99,3 +99,8 @@ td a:hover {
   color: #a81515;
   text-decoration: underline;
 }
+
+figure > img:hover{
+  transform: scale(1.1);
+  transition: transform .5s;
+}
