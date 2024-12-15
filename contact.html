@@ -33,6 +33,12 @@
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
      <script src="scripts/script.js"></script>
+     <script src="https://www.google.com/recaptcha/api.js"></script>
+     <script>
+      function onSubmit(token) {
+        document.getElementById("contactForm").submit();
+      }
+    </script>
     
   </head>
   <body>
@@ -107,7 +113,7 @@
       <hr class="text-secondary mx-5">   
     <section class="mx-5 my-5">
       <h2 class="my-5 text-center">Contactformulier</h2>
-      <form method="post" data-netlify="true" name="contactForm" class="container was-validated d-flex justify-content-center align-items-start">
+      <form method="post" data-netlify="true" name="contactForm" id="contactForm" class="container was-validated d-flex justify-content-center align-items-start">
         <ul>
         <li class="form-group my-2">
         <input type="text" name="naam" class="form-control align-items-start" placeholder="Naam" required>
@@ -121,7 +127,9 @@
         <span class="invalid-feedback">Dit veld mag niet leeg zijn.</span>
       </li>
       <li class="form-group my-4 text-center">
-        <input type="submit" value="Verstuur" class="btn btn-warning" id="submitbutton">
+        <input type="submit" value="Verstuur" class="btn btn-warning g-recaptcha" data-sitekey="reCAPTCHA_site_key" 
+        data-callback='onSubmit' 
+        data-action='submit' id="submitbutton">
         
       </li>
     </ul>
